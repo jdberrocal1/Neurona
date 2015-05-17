@@ -45,3 +45,23 @@ img {
     padding-top:7px;
     width:90px;
 }
+
+.btn {
+    border: 1px solid white;
+    width: 97.5px;
+    height: 90px;
+}
+
+.btn:hover {
+    background-color:#1186ab;
+
+}
+
+.black
+{
+    background-color:black;
+}
+.color
+{
+    background-color:#1186ab;
+}
