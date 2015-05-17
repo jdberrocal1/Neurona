@@ -247,21 +247,21 @@ namespace Neurona {
         protected global::System.Web.UI.WebControls.Button b44;
         
         /// <summary>
-        /// Button1 control.
+        /// learning control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox learning;
         
         /// <summary>
-        /// mat control.
+        /// viewRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mat;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator viewRegularExpressionValidator;
     }
 }

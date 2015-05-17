@@ -125,8 +125,14 @@
 
                         </div>
                         <div class="col-md-6">
-                            <asp:Button  ID="Button1" value="0" runat="server" class="btn black" OnClick="matrix"/>
-                            <asp:TextBox ID="mat" runat="server" TextMode="multiline" Rows="6" ></asp:TextBox>
+                            Please enter a learning factor
+                            <div class="form-group">
+                                <asp:TextBox ID="learning" runat="server" Text="0.5" class="form-control"></asp:TextBox>
+                            </div>
+                            <asp:RegularExpressionValidator ID="viewRegularExpressionValidator" runat="server" ValidationExpression="[0].[0-9]{1,50}" ControlToValidate="learning" ErrorMessage="Please Enter numbers only" ForeColor="Red">Please enter a value between 0 and 1</asp:RegularExpressionValidator>
+                            <br />
+                            <asp:ImageButton ImageUrl="~/Images/go.png" runat="server" Width="70px" OnClick="evaluate" />
+                            
                         </div>
                     </div>
                 </form>

@@ -54,7 +54,6 @@ img {
 
 .btn:hover {
     background-color:#1186ab;
-
 }
 
 .black
@@ -64,4 +63,10 @@ img {
 .color
 {
     background-color:#1186ab;
+}
+
+.btn1
+{
+    background-color:#1186ab;
+    border-radius:50px;
 }
