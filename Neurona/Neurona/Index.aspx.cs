@@ -22,7 +22,8 @@ namespace Neurona
         protected void evaluate(object sender, EventArgs e)
         {
             Neurotron insNeurotron = new Neurotron();
-            insNeurotron.checkMatrix(getMatriz()); // RETORNA LA LETRAS QUE SE TIENE QUE MOSTRAR
+            result.Text=insNeurotron.checkMatrix(getMatriz()); // RETORNA LA LETRAS QUE SE TIENE QUE MOSTRAR
+            
         }
 
         protected void paintButton(object sender, EventArgs e)
