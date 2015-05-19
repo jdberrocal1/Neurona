@@ -361,9 +361,19 @@
                                 <div class="col-md-1">
                                     <asp:Button  ID="b99" value="0" runat="server" class="btn black" OnClick="paintButton"/>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="col-md-6">
+                            <asp:CheckBox ID="check" runat="server" Text="Image" />
+
+                            <div class="form-group">
+                                Select an Image File
+                                <br />
+                                <input id="image" name="image" runat="server" size="40" style="z-index: 105; left: 36px; width: 360px; top: 29px; height: 22px" type="file" />
+                                <br />
+                                <asp:Image ID="img" runat="server" ImageUrl="~/Images/bullet.png"/>
+                            </div>
+
                             Please enter a learning factor
                             <div class="form-group">
                                 <asp:TextBox ID="learning" runat="server" Text="0.5" class="form-control"></asp:TextBox>
