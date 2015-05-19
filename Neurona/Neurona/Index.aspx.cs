@@ -10,7 +10,6 @@ namespace Neurona
 {
     public partial class Index : System.Web.UI.Page
     {
-
         int[,] matriz = new int[5, 5] { { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 } };
         int x = 0;
         int y = 0;
@@ -22,7 +21,8 @@ namespace Neurona
         protected void evaluate(object sender, EventArgs e)
         {
             Neurotron insNeurotron = new Neurotron();
-            insNeurotron.checkMatrix(getMatriz()); // RETORNA LA LETRAS QUE SE TIENE QUE MOSTRAR
+            result.Text=insNeurotron.checkMatrix(getMatriz(), Convert.ToDouble(10/100)); // RETORNA LA LETRAS QUE SE TIENE QUE MOSTRAR
+            
         }
 
         protected void paintButton(object sender, EventArgs e)

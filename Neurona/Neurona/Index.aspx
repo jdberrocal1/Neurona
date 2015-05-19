@@ -132,7 +132,13 @@
                             <asp:RegularExpressionValidator ID="viewRegularExpressionValidator" runat="server" ValidationExpression="[0].[0-9]{1,50}" ControlToValidate="learning" ErrorMessage="Please Enter numbers only" ForeColor="Red">Please enter a value between 0 and 1</asp:RegularExpressionValidator>
                             <br />
                             <asp:ImageButton ImageUrl="~/Images/go.png" runat="server" Width="70px" OnClick="evaluate" />
-                            
+                            <br />
+                            <br />
+                            <div>
+                                Result
+                                <br />
+                                <h1><asp:Literal ID="result" runat="server" /></h1>
+                            </div>
                         </div>
                     </div>
                 </form>

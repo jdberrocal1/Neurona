@@ -5,10 +5,11 @@ using System.Web;
 
 namespace Neurona
 {
-    public class Train
+    public class Learn
     {
         public void trainNeuron(int p) 
         {
+
         }
     }
 }
