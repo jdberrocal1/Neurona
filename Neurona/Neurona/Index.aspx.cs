@@ -55,11 +55,11 @@ namespace Neurona
 
             if (check.Checked)
             {
-                result.Text = insNeurotron.checkMatrix(getMatrixFromIMG());
+                result.Text = insNeurotron.checkMatrix(getMatrixFromIMG(),Convert.ToDouble(learning.Text));
             }
             else
             {
-                result.Text = insNeurotron.checkMatrix(getMatriz()); 
+                result.Text = insNeurotron.checkMatrix(getMatriz(), Convert.ToDouble(learning.Text)); 
             }
 
         }
