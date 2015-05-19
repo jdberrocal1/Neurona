@@ -334,7 +334,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Train.cs" />
+    <Compile Include="Learn.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Upload\" />
