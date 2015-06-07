@@ -59,3 +59,33 @@ C:\Users\GeOrge\Documents\GitHub\Neurona\Neurona\Neurona\bin\DotNetOpenAuth.AspN
 C:\Users\GeOrge\Documents\GitHub\Neurona\Neurona\Neurona\obj\Debug\Neurona.csprojResolveAssemblyReference.cache
 C:\Users\GeOrge\Documents\GitHub\Neurona\Neurona\Neurona\obj\Debug\Neurona.dll
 C:\Users\GeOrge\Documents\GitHub\Neurona\Neurona\Neurona\obj\Debug\Neurona.pdb
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Neurona.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Neurona.pdb
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Antlr3.Runtime.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.Core.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\EntityFramework.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\System.Web.Optimization.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\System.Web.Providers.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\WebGrease.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\EntityFramework.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.Core.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\obj\Debug\Neurona.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\obj\Debug\Neurona.dll
+C:\Users\Daniel\Documents\GitHub\Neurona\Neurona 2\Neurona\obj\Debug\Neurona.pdb
