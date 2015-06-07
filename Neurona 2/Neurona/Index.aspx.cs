@@ -66,8 +66,8 @@ namespace Neurona
             image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
             string file = Server.MapPath("Upload/" + image.PostedFile.FileName);
             img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
-            Bitmap myBitmap = GrayScale(new Bitmap(file));
-            return myBitmap;
+            //Bitmap myBitmap = GrayScale(new Bitmap(file));
+            return new Bitmap(file);
         }
 
         protected bool isCleanColumn(Bitmap img, int colum)
