@@ -31,7 +31,7 @@
           <Property Name="OUT_CARACTER" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CARACTER1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="basedatosEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="basedatosEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CARACTER" EntityType="Self.CARACTER" />
         </EntityContainer>
       </Schema>
@@ -39,7 +39,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="basedatosModelStoreContainer" CdmEntityContainer="basedatosEntities">
+        <EntityContainerMapping StorageEntityContainer="basedatosModelStoreContainer" CdmEntityContainer="basedatosEntities1">
           <EntitySetMapping Name="CARACTER">
             <EntityTypeMapping TypeName="basedatosModel.CARACTER">
               <MappingFragment StoreEntitySet="CARACTER">

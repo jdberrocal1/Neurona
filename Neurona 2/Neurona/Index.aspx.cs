@@ -14,6 +14,7 @@ namespace Neurona
 {
     public partial class Index : System.Web.UI.Page
     {
+        Neurotron insNeurotron = new Neurotron();
                 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,10 +38,9 @@ namespace Neurona
 
         protected void evaluate(object sender, EventArgs e)
         {
-            //Neurotron insNeurotron = new Neurotron();
-            //result.Text = insNeurotron.checkMatrix(getMatrixFromIMG(),Convert.ToDouble(learning.Text));
+            result.Text = insNeurotron.checkMatrix(getMatrixFromIMG(),Convert.ToDouble(learning.Text));
 
-            ArrayList x = getMatrixFromIMG();
+            //ArrayList x = getMatrixFromIMG();
         }
 
         
@@ -63,9 +63,9 @@ namespace Neurona
 
         protected Bitmap getBitmapImage()
         {
-            image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
-            string file = Server.MapPath("Upload/" + image.PostedFile.FileName);
-            img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
+            //image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
+            string file = "C:\\Users\\GeOrge\\Documents\\GitHub\\Neurona\\Neurona 2\\Neurona\\Upload\\O.png";//Server.MapPath("Upload/" + image.PostedFile.FileName);
+            //img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
             //Bitmap myBitmap = GrayScale(new Bitmap(file));
             return new Bitmap(file);
         }
@@ -90,12 +90,12 @@ namespace Neurona
                 return clean;
         }
 
-        protected ArrayList getMatrixFromIMG() {
+        protected List<int[]> getMatrixFromIMG() {
             Bitmap myBitmap = getBitmapImage();
             int[] vector = new int[100];
             int cont = 0;
             Color color = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
-            ArrayList matriz = new ArrayList();
+            List<int[]> matriz = new List<int[]>();
             
 
             for (int c = 0; c < myBitmap.Width; c += 10)

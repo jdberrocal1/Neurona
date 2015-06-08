@@ -13,10 +13,10 @@ namespace Neurona
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class basedatosEntities : DbContext
+    public partial class basedatosEntities1 : DbContext
     {
-        public basedatosEntities()
-            : base("name=basedatosEntities")
+        public basedatosEntities1()
+            : base("name=basedatosEntities1")
         {
         }
     
