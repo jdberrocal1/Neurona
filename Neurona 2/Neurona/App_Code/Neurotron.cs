@@ -134,7 +134,7 @@ namespace Neurona
         {
             for (int i = 0; i < depth2.Count(); i++)
             {
-                double t = -1 * getInputDepth2(i);
+                double t = -1 * (getInputDepth2(i)/3);
                 depth2[i].result = (1) / (1 + Math.Pow((Math.E), t));
             }
         }
