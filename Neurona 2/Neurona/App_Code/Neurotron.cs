@@ -321,7 +321,7 @@ namespace Neurona
         /// <param name="pOut">Resultado esperado</param>
         /// <param name="pOldWeight">Peso anterior</param>
         /// <param name="pDelta">Delta de la primera capa</param>
-        /// <returns>Delta de la segunda capa</returns>
+        /// <returns>Delta de la segunda capa</returns> 
         private double getDelta2(double pOut, double pOldWeight, double pDelta) ///////////////
         {
             return pOut * (1 - pOut) * (pOldWeight * pDelta);
