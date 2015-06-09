@@ -53,14 +53,14 @@ namespace Neurona
             if (train)
             {
                 fillLists(pMatrix.Count());
-                trainNeuron(pMatrix, 1000, pLearning);
+                trainNeuron(pMatrix, 10000, pLearning);
                 train = false;
             }
 
             getWeights(pMatrix);
 
             for (int i = 0; i < 6; i++)
-                depth2[i].result = Convert.ToInt32(Math.Round(depth2[i].result, 0));
+                depth2[i].result = Convert.ToInt32(Math.Round((depth2[i].result-0.999)*1000, 0));
 
             return getCharacter();
         }
