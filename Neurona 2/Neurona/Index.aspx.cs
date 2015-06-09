@@ -63,10 +63,10 @@ namespace Neurona
 
         protected Bitmap getBitmapImage()
         {
-            //image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
-            string file = "C:\\Users\\GeOrge\\Documents\\GitHub\\Neurona\\Neurona 2\\Neurona\\Upload\\O.png";//Server.MapPath("Upload/" + image.PostedFile.FileName);
-            //img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
-            //Bitmap myBitmap = GrayScale(new Bitmap(file));
+            image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
+            string file = Server.MapPath("Upload/" + image.PostedFile.FileName);
+            img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
+            Bitmap myBitmap = GrayScale(new Bitmap(file));
             return new Bitmap(file);
         }
 
