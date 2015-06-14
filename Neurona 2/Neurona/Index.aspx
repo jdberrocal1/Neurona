@@ -49,7 +49,16 @@
                                 <asp:TextBox ID="learning" runat="server" Text="0,5" class="form-control"></asp:TextBox>
                             </div>
                             <asp:RegularExpressionValidator ID="viewRegularExpressionValidator" runat="server" ValidationExpression="[0].[0-9]{1,50}" ControlToValidate="learning" ErrorMessage="Please Enter numbers only" ForeColor="Red">Please enter a value between 0 and 1</asp:RegularExpressionValidator>
-                            <br />
+                            
+
+                            
+                            <div class="form-group">
+                                Please enter Char
+                                <asp:TextBox ID="character" runat="server"  class="form-control"></asp:TextBox>
+                            </div>
+                            
+                            
+
                             <asp:ImageButton ImageUrl="~/Images/go.png" runat="server" Width="70px" OnClick="evaluate" />
                             <br />
                             <br />

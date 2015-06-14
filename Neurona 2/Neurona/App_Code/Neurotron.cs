@@ -53,7 +53,7 @@ namespace Neurona
             if (train)
             {
                 fillLists(pMatrix.Count());
-                trainNeuron(pMatrix, 10000, pLearning);
+                trainNeuron(pMatrix, 1000, pLearning);
                 train = false;
             }
 
@@ -192,7 +192,7 @@ namespace Neurona
             for (int i = 0; i < depth2.Count(); i++)
                 patron += (depth2[i].result).ToString();
 
-            var query = from x in db.CARACTER
+            var query = from x in db.CARACTERS
                         //where x.OUT_CARACTER.Equals(result)
                         select x;
 
@@ -205,7 +205,7 @@ namespace Neurona
                 }
                 if (max < cont)
                 {
-                    result = tmp.CARACTER1;
+                    result = tmp.CARACTER;
                     max = cont;
                 }
 
@@ -223,7 +223,7 @@ namespace Neurona
         /// <param name="pLearning">Factor de aprendizaje</param>
         private void trainNeuron(/*int[]*/string pMatrix, int x, double pLearning) //////
         {
-            var query = from tmp in db.CARACTER
+            var query = from tmp in db.CARACTERS
                         select tmp;
 
             for (int i = 0; i < x; i++) 
@@ -302,6 +302,67 @@ namespace Neurona
                 newWeight = oldWeight + pLearning * input * getDelta2(depth1[pID].result, pOutWeight, pDelta);
                 depth1[pID].weight[i] = newWeight;
             }
+        }
+
+        /// <summary>
+        /// Obtiene el caracter de la base de datos
+        /// </summary>
+        /// <returns>Retorna el codigo del caracter</returns>
+        public string getCharacterAux(List<int[]> pVector, string pCharacters)
+        {
+            string patron = "";
+            string result = "";
+            string resultado = "";
+            string codigo = "";
+            int cont = 0;
+            int max = 0;
+
+
+            for (int i = 0; i < pVector.Count(); i++)
+            {
+                for (int j = 0; j < pVector[i].Count(); j++)
+                {
+                    patron += ((pVector[i])[j]).ToString(); 
+                }
+                var query = from x in db.CARACTERS
+                            
+                            select x;
+                foreach (var tmp in query)
+                {
+                    for (int j = 0; j < tmp.IN_CARACTER.Length; j++)
+                    {
+                        if (patron[j].Equals(tmp.IN_CARACTER[i]))
+                            cont++;
+                    }
+                    if (max < cont)
+                    {
+                        result = tmp.CARACTER;
+                        codigo = tmp.OUT_CARACTER;
+                        max = cont;
+                    }
+
+                    cont = 0;
+                }
+
+                if (pCharacters.Count() > 0 && !result.Equals(pCharacters[i]))
+                {
+                    CARACTERS row = new CARACTERS
+                    {
+                        IN_CARACTER = patron,
+                        OUT_CARACTER = codigo,
+                        CARACTER = result
+                    };
+                    db.CARACTERS.Add(row);
+                    db.SaveChanges();
+
+                    resultado += pCharacters[i];
+                }
+                else
+                {
+                    resultado += result;
+                }
+            }
+            return resultado;
         }
 
         /// <summary>

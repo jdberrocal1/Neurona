@@ -39,7 +39,7 @@ namespace Neurona
         protected void evaluate(object sender, EventArgs e)
         {
             result.Text = insNeurotron.checkMatrix(getMatrixFromIMG(),Convert.ToDouble(learning.Text));
-
+            result.Text = insNeurotron.getCharacterAux(getMatrixFromIMG(),character.Text.ToString());
             //ArrayList x = getMatrixFromIMG();
         }
 
@@ -67,6 +67,7 @@ namespace Neurona
             string file = Server.MapPath("Upload/" + image.PostedFile.FileName);
             img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
             Bitmap myBitmap = GrayScale(new Bitmap(file));
+
             return new Bitmap(file);
         }
 

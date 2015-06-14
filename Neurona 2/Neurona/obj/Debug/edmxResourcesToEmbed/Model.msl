@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="basedatosModelStoreContainer" CdmEntityContainer="basedatosEntities1">
-    <EntitySetMapping Name="CARACTER">
-      <EntityTypeMapping TypeName="basedatosModel.CARACTER">
-        <MappingFragment StoreEntitySet="CARACTER">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IN_CARACTER" ColumnName="IN_CARACTER" />
+    <EntitySetMapping Name="CARACTERS">
+      <EntityTypeMapping TypeName="basedatosModel.CARACTERS">
+        <MappingFragment StoreEntitySet="CARACTERS">
+          <ScalarProperty Name="CARACTER" ColumnName="CARACTER" />
           <ScalarProperty Name="OUT_CARACTER" ColumnName="OUT_CARACTER" />
-          <ScalarProperty Name="CARACTER1" ColumnName="CARACTER" />
+          <ScalarProperty Name="IN_CARACTER" ColumnName="IN_CARACTER" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
