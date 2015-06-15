@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-l
+
 namespace Neurona
 {
     /// <summary>
@@ -53,7 +53,7 @@ namespace Neurona
             if (train)
             {
                 fillLists(pMatrix.Count());
-                trainNeuron(pMatrix, 100, pLearning);
+                trainNeuron(pMatrix, 1000, pLearning);
                 train = false;
             }
 

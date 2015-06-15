@@ -40,7 +40,7 @@ namespace Neurona
             if (train) 
             {
                 fillLists(pMatrix.Length);
-                trainNeuron(pMatrix, 10000, pLearning);
+                trainNeuron(pMatrix, 1000, pLearning);
                 train = false;
             }
                 
@@ -143,64 +143,64 @@ namespace Neurona
         /// Obtiene el caracter de la base de datos
         /// </summary>
         /// <returns>Retorna el codigo del caracter</returns>
-        public string getCharacterAux(List<int[]> pVector, string pCharacters)
+        public string getCharacterAux(int[] pVector, string pCharacters)
         {
             string patron = "";
             string result = "";
-            string resultado = "";
+            //string resultado = "";
             string codigo = "";
             int cont = 0;
             int max = 0;
 
 
-            for (int i = 0; i < pVector.Count(); i++)
-            {
-                var query = from x in db.CARACTERS
+            //for (int i = 0; i < pVector.Count(); i++)
+            //{
+                var query = from x in db.CARACTER
                             select x;
 
                 foreach (var tmp in query)
                 {
                     for (int j = 0; j < tmp.IN_CARACTER.Length; j++)
                     {
-                        if (((pVector[i])[j]).ToString().Equals(tmp.IN_CARACTER[j].ToString()))
+                        if (pVector[j].ToString().Equals(tmp.IN_CARACTER[j].ToString()))
                             cont++;
                     }
                     if (max < cont)
                     {
-                        result = tmp.CARACTER;
+                        result = tmp.CARACTER1;
                         max = cont;
                     }
 
-                    if (pCharacters.Length > 0 && tmp.CARACTER.Equals(pCharacters[i].ToString()))
+                    if (pCharacters.Length > 0 && tmp.CARACTER1.Equals(pCharacters.ToString()))
                     {
                         codigo = tmp.OUT_CARACTER;
                         patron = "";
-                        for (int j = 0; j < pVector[i].Count(); j++)
-                            patron += ((pVector[i])[j]).ToString();
+                        for (int j = 0; j < pVector.Length; j++)
+                            patron += pVector[j].ToString();
                     }
 
                     cont = 0;
                 }
-
-                if (pCharacters.Length > 0 && !result.Equals(pCharacters[i].ToString()))
+            /*
+                if (pCharacters.Length > 0 && !result.Equals(pCharacters.ToString()))
                 {
-                    CARACTERS row = new CARACTERS
+                    CARACTER row = new CARACTER
                     {
                         IN_CARACTER = patron,
                         OUT_CARACTER = codigo,
-                        CARACTER = pCharacters[i].ToString()
+                        CARACTER1 = pCharacters.ToString()
                     };
-                    db.CARACTERS.Add(row);
+                    db.CARACTER.Add(row);
                     db.SaveChanges();
 
-                    resultado += pCharacters[i];
+                    resultado += pCharacters;
                 }
                 else
-                {
-                    resultado += result;
-                }
-            }
-            return resultado;
+                {*/
+                    //resultado += result;
+              //  }
+            //}
+            return result;
         }
 
         /// <summary>
