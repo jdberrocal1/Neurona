@@ -15,6 +15,7 @@ namespace Neurona
     public partial class Index : System.Web.UI.Page
     {
         Neurotron insNeurotron = new Neurotron();
+        bool readFile = true;
                 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,6 +41,7 @@ namespace Neurona
         {
             result.Text = insNeurotron.checkMatrix(getMatrixFromIMG(),Convert.ToDouble(learning.Text));
             result.Text = insNeurotron.getCharacterAux(getMatrixFromIMG(),character.Text.ToString());
+            readFile = true;
             //ArrayList x = getMatrixFromIMG();
         }
 
@@ -63,8 +65,15 @@ namespace Neurona
 
         protected Bitmap getBitmapImage()
         {
-            image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
-            string file = Server.MapPath("Upload/" + image.PostedFile.FileName);
+            string file = "";
+            // string file = "C:\\Users\\GeOrge\\Documents\\GitHub\\Neurona\\Imagenes de Muestra\\M.png";
+            if (readFile) 
+            {
+                image.PostedFile.SaveAs(Server.MapPath("~/Upload/") + Path.GetFileName(image.PostedFile.FileName));
+                readFile = false;
+            }
+
+            file = Server.MapPath("Upload/" + image.PostedFile.FileName);
             img.ImageUrl = "~/Upload/" + image.PostedFile.FileName;
             Bitmap myBitmap = GrayScale(new Bitmap(file));
 

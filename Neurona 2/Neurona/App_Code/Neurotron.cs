@@ -53,14 +53,14 @@ namespace Neurona
             if (train)
             {
                 fillLists(pMatrix.Count());
-                trainNeuron(pMatrix, 1000, pLearning);
+                trainNeuron(pMatrix, 100, pLearning);
                 train = false;
             }
 
             getWeights(pMatrix);
 
             for (int i = 0; i < 6; i++)
-                depth2[i].result = Convert.ToInt32(Math.Round((depth2[i].result-0.999)*1000, 0));
+                depth2[i].result = Convert.ToInt32(Math.Round((depth2[i].result), 0));
 
             return getCharacter();
         }
@@ -232,7 +232,7 @@ namespace Neurona
                 {
                     getWeights(tmp.IN_CARACTER/*pMatrix*/);
                     //trainNeuronAux(tmp.OUT_CARACTER, pMatrix, pLearning);
-                    if(!tmp.IN_CARACTER.Equals(""))
+                    if (!tmp.IN_CARACTER.Equals("") && !tmp.OUT_CARACTER.Equals(""))
                         trainNeuronAux(tmp.OUT_CARACTER, /*pMatrix*/tmp.IN_CARACTER, pLearning);
                 }
                 double r = depth1[0].weight[0];
@@ -324,33 +324,38 @@ namespace Neurona
                 {
                     patron += ((pVector[i])[j]).ToString(); 
                 }
+                 
                 var query = from x in db.CARACTERS
-                            
                             select x;
                 foreach (var tmp in query)
                 {
                     for (int j = 0; j < tmp.IN_CARACTER.Length; j++)
                     {
-                        if (patron[j].Equals(tmp.IN_CARACTER[i]))
+                        string m = ((pVector[i])[j]).ToString();
+                        string mm = tmp.IN_CARACTER[j].ToString();
+                        if (patron[j].Equals(tmp.IN_CARACTER[j]))
                             cont++;
                     }
                     if (max < cont)
                     {
                         result = tmp.CARACTER;
-                        codigo = tmp.OUT_CARACTER;
                         max = cont;
                     }
+                    
+                    if (tmp.CARACTER.Equals(pCharacters[i].ToString()))
+                        codigo = tmp.OUT_CARACTER;
 
                     cont = 0;
                 }
 
-                if (pCharacters.Count() > 0 && !result.Equals(pCharacters[i]))
+                if (pCharacters.Count() > 0 && !result.Equals(pCharacters[i].ToString()))
                 {
+
                     CARACTERS row = new CARACTERS
                     {
                         IN_CARACTER = patron,
                         OUT_CARACTER = codigo,
-                        CARACTER = result
+                        CARACTER = pCharacters[i].ToString()
                     };
                     db.CARACTERS.Add(row);
                     db.SaveChanges();
