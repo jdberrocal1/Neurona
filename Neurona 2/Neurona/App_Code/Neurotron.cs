@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+l
 namespace Neurona
 {
     /// <summary>
@@ -339,6 +339,7 @@ namespace Neurona
                     if (pCharacters.Length > 0 && tmp.CARACTER.Equals(pCharacters[i].ToString())) 
                     {
                         codigo = tmp.OUT_CARACTER;
+                        patron = "";
                         for (int j = 0; j < pVector[i].Count(); j++)
                             patron += ((pVector[i])[j]).ToString();
                     }

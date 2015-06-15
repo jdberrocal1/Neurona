@@ -143,6 +143,70 @@ namespace Neurona
         /// Obtiene el caracter de la base de datos
         /// </summary>
         /// <returns>Retorna el codigo del caracter</returns>
+        public string getCharacterAux(List<int[]> pVector, string pCharacters)
+        {
+            string patron = "";
+            string result = "";
+            string resultado = "";
+            string codigo = "";
+            int cont = 0;
+            int max = 0;
+
+
+            for (int i = 0; i < pVector.Count(); i++)
+            {
+                var query = from x in db.CARACTERS
+                            select x;
+
+                foreach (var tmp in query)
+                {
+                    for (int j = 0; j < tmp.IN_CARACTER.Length; j++)
+                    {
+                        if (((pVector[i])[j]).ToString().Equals(tmp.IN_CARACTER[j].ToString()))
+                            cont++;
+                    }
+                    if (max < cont)
+                    {
+                        result = tmp.CARACTER;
+                        max = cont;
+                    }
+
+                    if (pCharacters.Length > 0 && tmp.CARACTER.Equals(pCharacters[i].ToString()))
+                    {
+                        codigo = tmp.OUT_CARACTER;
+                        patron = "";
+                        for (int j = 0; j < pVector[i].Count(); j++)
+                            patron += ((pVector[i])[j]).ToString();
+                    }
+
+                    cont = 0;
+                }
+
+                if (pCharacters.Length > 0 && !result.Equals(pCharacters[i].ToString()))
+                {
+                    CARACTERS row = new CARACTERS
+                    {
+                        IN_CARACTER = patron,
+                        OUT_CARACTER = codigo,
+                        CARACTER = pCharacters[i].ToString()
+                    };
+                    db.CARACTERS.Add(row);
+                    db.SaveChanges();
+
+                    resultado += pCharacters[i];
+                }
+                else
+                {
+                    resultado += result;
+                }
+            }
+            return resultado;
+        }
+
+        /// <summary>
+        /// Obtiene el caracter de la base de datos
+        /// </summary>
+        /// <returns>Retorna el codigo del caracter</returns>
         private string getCharacter() 
         {
             string result = "";
