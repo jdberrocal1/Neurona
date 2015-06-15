@@ -320,20 +320,14 @@ namespace Neurona
 
             for (int i = 0; i < pVector.Count(); i++)
             {
-                for (int j = 0; j < pVector[i].Count(); j++)
-                {
-                    patron += ((pVector[i])[j]).ToString(); 
-                }
-                 
                 var query = from x in db.CARACTERS
                             select x;
+
                 foreach (var tmp in query)
                 {
                     for (int j = 0; j < tmp.IN_CARACTER.Length; j++)
                     {
-                        string m = ((pVector[i])[j]).ToString();
-                        string mm = tmp.IN_CARACTER[j].ToString();
-                        if (patron[j].Equals(tmp.IN_CARACTER[j]))
+                        if (((pVector[i])[j]).ToString().Equals(tmp.IN_CARACTER[j].ToString()))
                             cont++;
                     }
                     if (max < cont)
@@ -341,16 +335,19 @@ namespace Neurona
                         result = tmp.CARACTER;
                         max = cont;
                     }
-                    
-                    if (tmp.CARACTER.Equals(pCharacters[i].ToString()))
-                        codigo = tmp.OUT_CARACTER;
 
+                    if (pCharacters.Length > 0 && tmp.CARACTER.Equals(pCharacters[i].ToString())) 
+                    {
+                        codigo = tmp.OUT_CARACTER;
+                        for (int j = 0; j < pVector[i].Count(); j++)
+                            patron += ((pVector[i])[j]).ToString();
+                    }
+                        
                     cont = 0;
                 }
 
-                if (pCharacters.Count() > 0 && !result.Equals(pCharacters[i].ToString()))
+                if (pCharacters.Length > 0 && !result.Equals(pCharacters[i].ToString()))
                 {
-
                     CARACTERS row = new CARACTERS
                     {
                         IN_CARACTER = patron,
