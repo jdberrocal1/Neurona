@@ -32,7 +32,7 @@
             <div class="col-md-12">
                 <form id="form1" runat="server">
                    <div class="row">
-                       </div>
+                       
                         <div class="col-md-6">
                             
 
@@ -60,14 +60,15 @@
                             
 
                             <asp:ImageButton ImageUrl="~/Images/go.png" runat="server" Width="70px" OnClick="evaluate" />
-                            <br />
-                            <br />
-                            <div>
-                                Result
-                                <br />
-                                <h1><asp:Literal ID="result" runat="server" /></h1>
-                            </div>
+                           
                         </div>
+                        <div class="col-md-6">
+                            Result
+                                <br />
+                                <h1 class="result"><asp:Literal ID="result" runat="server" /></h1>
+                        </div>
+                    </div>
+                        
                     </div>
                 </form>
             </div>
